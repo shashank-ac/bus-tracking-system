@@ -27,7 +27,9 @@ password:admin
 
 4.Run Traccar Services> traccar> start
 
-```bash browse : localhost://8080 ```
+```bash
+browse : localhost://8080
+```
     
 5.Set bus name & bus numbers
 
