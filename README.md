@@ -1,121 +1,198 @@
-# A Smart Mobility Solution for Realtime Bus Tracking ! 
+# 🚌 Smart Mobility Solution for Real-Time Bus Tracking
 
-## Project Description:
+## 📖 Project Description
 
-Developed a real-time bus tracking system using GPS data from the driver's mobile device. The system provides route-based bus tracking, ETA calculation, and map integration. Users can search buses using route information and monitor current bus locations in real time.
+This project is a real-time bus tracking system that uses GPS data from the driver's mobile device. The system enables users to track buses based on routes, view live bus locations, and estimate arrival times (ETA) through an interactive map interface.
 
+### ✨ Key Features
 
-#### login:
+- Real-time bus tracking
+- GPS-based location updates
+- Route-wise bus search
+- Estimated Time of Arrival (ETA)
+- Interactive map integration
+- Mobile-based GPS tracking using Traccar
 
-username:admin
+## 🔐 Demo Credentials
 
-password:admin
+| Username | Password |
+|-----------|-----------|
+| admin | admin |
 
+---
 
-### Set Up:
+# ⚙️ Traccar Server Setup
 
-#### Traccar client server setup 
+## 1. Download Traccar Server
 
-1.Download Traccar Client server
+Download and install the latest Traccar Server release.
 
-    Download Link:
-```bash    
-https://release-assets.githubusercontent.com/github-production-release-asset/4038949/62b94418-a447-4ea7-9f15-f4ff8d00189e?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-04T11%3A52%3A24Z&rscd=attachment%3B+filename%3Dtraccar-windows-64-6.12.2.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-04T10%3A51%3A38Z&ske=2026-04-04T11%3A52%3A24Z&sks=b&skv=2018-11-09&sig=XW3t6eaelsIxMI37WtAs%2FyyzGpuIwk4FYDsGTffmv3A%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3NTMwNDAwMSwibmJmIjoxNzc1MzAwNDAxLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.7NJdX6iVOQ-9rvhh_Sp5jt2Tvh5nvI2O9r4NLqIyuSc&response-content-disposition=attachment%3B%20filename%3Dtraccar-windows-64-6.12.2.zip&response-content-type=application%2Foctet-stream
+## 2. Replace Configuration File
+
+Replace the default configuration file with:
+
+```text
+project_folder/note/custom_traccar_conf/traccar.xml
 ```
 
-2.Replace Traccar conf with custom conf (dir project_folder/note/custom_traccar_conf/traccar.xml)
+## 3. Run Database Fix Script
 
-3.Run sql_error_device_time sql command on mysql admin pannel
-    (for bypassing error)
+Execute the SQL script:
 
-4.Run Traccar Services> traccar> start
+```sql
+sql_error_device_time.sql
+```
+
+This bypasses the device time synchronization issue.
+
+## 4. Start Traccar Service
+
+Start the Traccar service from Windows Services.
+
+Open:
+
+```text
+http://localhost:8080
+```
+
+## 5. Register Bus Devices
+
+Configure the following:
+
+```text
+Name: Bus Name
+Device Identifier: Bus Number
+```
+
+## 6. Configure Cloudflare Tunnel
+
+Rename the downloaded executable to:
+
+```text
+cloudflared.exe
+```
+
+## 7. Start Tunnel
+
+Open Command Prompt:
 
 ```bash
-browse : localhost://8080
+cd C:\
+cloudflared tunnel --url http://localhost:8080
 ```
-    
-5.Set bus name & bus numbers
+
+Example output:
+
+```text
+https://random-name.trycloudflare.com
+```
+
+## 8. Configure Traccar Client App
+
+Download:
+
+https://play.google.com/store/apps/details?id=org.traccar.client
+
+In the app settings:
+
+```text
+Server URL: https://random-name.trycloudflare.com
+```
+
+## 9. Configure Device Identifier
+
+Set:
+
+```text
+Device Identifier = Bus Number
+```
+
+Enable all location permissions and GPS services.
+
+---
+
+# 🚀 Main Project Setup
+
+## 1. Copy Project Files
+
+Place the project folder inside:
+
+```text
+C:\xampp\htdocs\
+```
+
+## 2. Start XAMPP
+
+Start:
+
+- Apache
+- MySQL
+
+Open:
+
+```text
+http://localhost/project_folder_name
+```
+
+## 3. Import Database
+
+Import:
+
+```sql
+database.sql
+```
+
+using phpMyAdmin.
+
+## 4. Configure Cloudflare Tunnel
+
+Rename the executable to:
+
+```text
+cloudflared.exe
+```
+
+## 5. Expose Local Project
+
+Open Command Prompt:
 
 ```bash
-    Name:Bus name
-    Device Identifier<< Bus number 
+cd C:\
+cloudflared tunnel --url http://localhost:80
 ```
 
-6.Tunneling Traccar Server using CloudFlared 
+Access the application using:
 
-    Download Link:
-```bash
-    https://release-assets.githubusercontent.com/github-production-release-asset/106867604/218dc8be-2fac-44b9-ae80-2baf647c2c28?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-20T10%3A49%3A45Z&rscd=attachment%3B+filename%3Dcloudflared-windows-amd64.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-20T09%3A49%3A25Z&ske=2026-04-20T10%3A49%3A45Z&sks=b&skv=2018-11-09&sig=97XiMbbv5M6lN15SfWP40UP3uSd%2FsMJ%2B4NIucCY2rTU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3NjY4MDYzMywibmJmIjoxNzc2Njc4ODMzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.-hBfxd_QnPMK5DP3-kIY6dTnEBk1zFoo2SjukFggYKM&response-content-disposition=attachment%3B%20filename%3Dcloudflared-windows-amd64.exe&response-content-type=application%2Foctet-stream)
-```
-  
-```bash
-    >> rename as cloudflared.exe
+```text
+https://random-name.trycloudflare.com/project_folder_name
 ```
 
-7.Run cammand on cmd :
+---
 
-```bash
-    cd c:/
-    cloudflared tunnel --url http://localhost:8080
-    >>https://random.trycloudflare.com
-```
+# 🛠️ Technology Stack
 
-8.Paste  the generated url in Traccar client mobile application 
+- PHP
+- MySQL
+- JavaScript
+- HTML5
+- CSS3
+- Google Maps API
+- Traccar GPS Server
+- Cloudflare Tunnel
+- XAMPP
 
-   Download Link:
-   ```bash
-   https://play.google.com/store/apps/details?id=org.traccar.client
-   ```
-   >>Server URL
+---
 
-9.Device Identifier << Bus number 
-    enable all location options 
+# 📂 Repository
 
+🔗 Repository Link:
 
+https://github.com/shashank-ac/bus-tracking-system
 
-#### Main Project setup 
+---
 
-1.Place project in 
+# 👨‍💻 Author
 
-```bash
-c:/xamp/htdoc/
-```
+**Shashank Achar**
 
-2.Run xamp control panel 
-    mysql & apache 
-    
-  ```bash
-  browse : localhost:/project_folder_name
-```
-
-3.Run database.sql db cmds 
-
-4.Tunneling project using CloudFlared 
-
-    Download Link:
-```bash
-    https://release-assets.githubusercontent.com/github-production-release-asset/106867604/218dc8be-2fac-44b9-ae80-2baf647c2c28?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-20T10%3A49%3A45Z&rscd=attachment%3B+filename%3Dcloudflared-windows-amd64.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-20T09%3A49%3A25Z&ske=2026-04-20T10%3A49%3A45Z&sks=b&skv=2018-11-09&sig=97XiMbbv5M6lN15SfWP40UP3uSd%2FsMJ%2B4NIucCY2rTU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3NjY4MDYzMywibmJmIjoxNzc2Njc4ODMzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.-hBfxd_QnPMK5DP3-kIY6dTnEBk1zFoo2SjukFggYKM&response-content-disposition=attachment%3B%20filename%3Dcloudflared-windows-amd64.exe&response-content-type=application%2Foctet-stream
-```
-    
- ```bash   
-    >> rename as cloudflared.exe
-```  
-
-5.Run cammand on cmd :
-
-```bash
-    cd c:/
-    cloudflared tunnel --url http://localhost:80
-    browse : https://random.trycloudflare.com/project_name/
-```
-
-
-    
-    
- 
- 
-    
-    
-    
-
- 
+GitHub: https://github.com/shashank-ac
