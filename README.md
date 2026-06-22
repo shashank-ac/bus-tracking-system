@@ -15,10 +15,10 @@ password:admin
 #### Traccar client server setup 
 
 1.Download Traccar Client server
-```bash
+
     Download Link:
-    https://release-assets.githubusercontent.com/github-production-release-asset/4038949/62b94418-a447-4ea7-9f15-f4ff8d00189e?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-04T11%3A52%3A24Z&rscd=attachment%3B+filename%3Dtraccar-windows-64-6.12.2.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-04T10%3A51%3A38Z&ske=2026-04-04T11%3A52%3A24Z&sks=b&skv=2018-11-09&sig=XW3t6eaelsIxMI37WtAs%2FyyzGpuIwk4FYDsGTffmv3A%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3NTMwNDAwMSwibmJmIjoxNzc1MzAwNDAxLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.7NJdX6iVOQ-9rvhh_Sp5jt2Tvh5nvI2O9r4NLqIyuSc&response-content-disposition=attachment%3B%20filename%3Dtraccar-windows-64-6.12.2.zip&response-content-type=application%2Foctet-stream
-```
+    [traccar client server](https://release-assets.githubusercontent.com/github-production-release-asset/4038949/62b94418-a447-4ea7-9f15-f4ff8d00189e?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-04T11%3A52%3A24Z&rscd=attachment%3B+filename%3Dtraccar-windows-64-6.12.2.zip&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-04T10%3A51%3A38Z&ske=2026-04-04T11%3A52%3A24Z&sks=b&skv=2018-11-09&sig=XW3t6eaelsIxMI37WtAs%2FyyzGpuIwk4FYDsGTffmv3A%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3NTMwNDAwMSwibmJmIjoxNzc1MzAwNDAxLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.7NJdX6iVOQ-9rvhh_Sp5jt2Tvh5nvI2O9r4NLqIyuSc&response-content-disposition=attachment%3B%20filename%3Dtraccar-windows-64-6.12.2.zip&response-content-type=application%2Foctet-stream)
+
 2.Replace Traccar conf with custom conf (dir project_folder/note/custom_traccar_conf/traccar.xml)
 
 3.Run sql_error_device_time sql command on mysql admin pannel
