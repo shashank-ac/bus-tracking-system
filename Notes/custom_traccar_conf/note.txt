@@ -1,0 +1,1 @@
+Replace this config with existing one in traccar client server
