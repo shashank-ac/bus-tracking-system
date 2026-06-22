@@ -32,23 +32,23 @@ password:admin
     Device Identifier<< Bus number 
 
 5.Tunneling Traccar Server using CloudFlared 
-```bash
+
     Download Link:
     https://release-assets.githubusercontent.com/github-production-release-asset/106867604/218dc8be-2fac-44b9-ae80-2baf647c2c28?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-20T10%3A49%3A45Z&rscd=attachment%3B+filename%3Dcloudflared-windows-amd64.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-20T09%3A49%3A25Z&ske=2026-04-20T10%3A49%3A45Z&sks=b&skv=2018-11-09&sig=97XiMbbv5M6lN15SfWP40UP3uSd%2FsMJ%2B4NIucCY2rTU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3NjY4MDYzMywibmJmIjoxNzc2Njc4ODMzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.-hBfxd_QnPMK5DP3-kIY6dTnEBk1zFoo2SjukFggYKM&response-content-disposition=attachment%3B%20filename%3Dcloudflared-windows-amd64.exe&response-content-type=application%2Foctet-stream
-```
+
     >> rename as cloudflared.exe
 
 6.Run cammand on cmd 
-```bash
+
     cd c:/
     cloudflared tunnel --url http://localhost:8080
     >>https://random.trycloudflare.com
-```
+
 7.Paste  the generated url in Traccar client mobile application 
    Download Link:
-   ```bash
+   
    https://play.google.com/store/apps/details?id=org.traccar.client
-```
+
    >>Server URL
 
 8.Device Identifier << Bus number 
@@ -68,9 +68,9 @@ password:admin
 
 4.Tunneling project using CloudFlared 
     Download Link: 
-    ```bash
+    
     https://release-assets.githubusercontent.com/github-production-release-asset/106867604/218dc8be-2fac-44b9-ae80-2baf647c2c28?sp=r&sv=2018-11-09&sr=b&spr=https&se=2026-04-20T10%3A49%3A45Z&rscd=attachment%3B+filename%3Dcloudflared-windows-amd64.exe&rsct=application%2Foctet-stream&skoid=96c2d410-5711-43a1-aedd-ab1947aa7ab0&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skt=2026-04-20T09%3A49%3A25Z&ske=2026-04-20T10%3A49%3A45Z&sks=b&skv=2018-11-09&sig=97XiMbbv5M6lN15SfWP40UP3uSd%2FsMJ%2B4NIucCY2rTU%3D&jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmVsZWFzZS1hc3NldHMuZ2l0aHVidXNlcmNvbnRlbnQuY29tIiwia2V5Ijoia2V5MSIsImV4cCI6MTc3NjY4MDYzMywibmJmIjoxNzc2Njc4ODMzLCJwYXRoIjoicmVsZWFzZWFzc2V0cHJvZHVjdGlvbi5ibG9iLmNvcmUud2luZG93cy5uZXQifQ.-hBfxd_QnPMK5DP3-kIY6dTnEBk1zFoo2SjukFggYKM&response-content-disposition=attachment%3B%20filename%3Dcloudflared-windows-amd64.exe&response-content-type=application%2Foctet-stream
-    ```
+    
     >> rename as cloudflared.exe
     
 
