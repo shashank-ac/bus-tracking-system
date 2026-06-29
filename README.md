@@ -176,7 +176,6 @@ https://random-name.trycloudflare.com/project_folder_name
 - JavaScript
 - HTML5
 - CSS3
-- Google Maps API
 - Traccar GPS Server
 - Cloudflare Tunnel
 - XAMPP
